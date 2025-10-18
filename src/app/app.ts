@@ -1,11 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.html',
   standalone: false,
-  styleUrl: './app.css'
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('corso-angular');
+  title = "prova"
+  onClick(e: Event){
+    console.log( (<HTMLInputElement>e.target).value)
+    this.title = "ho cliccato"
+  }
 }
